@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190225 18:30:07.604" generator="Robot 3.1.1 (Python 2.7.12 on linux2)">
+<suite source="/opt/Anbu/workspace/Robot_Framework/Robot_REST_API" id="s1" name="Robot REST API">
+<suite source="/opt/Anbu/workspace/Robot_Framework/Robot_REST_API/TC_001_Rest_API" id="s1-s1" name="TC 001 Rest API">
+<suite source="/opt/Anbu/workspace/Robot_Framework/Robot_REST_API/TC_001_Rest_API/TC_001_Delete_Request.robot" id="s1-s1-s1" name="TC 001 Delete Request">
+<test id="s1-s1-s1-t1" name="TC_001_Delete_Request">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>Add_Student_details</arg>
+<arg>${App_Base_URL}</arg>
+</arguments>
+<msg timestamp="20190225 18:30:08.623" level="INFO">Creating Session using : alias=Add_Student_details, url=https://www.thetestingworldapi.com/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" endtime="20190225 18:30:08.624" starttime="20190225 18:30:08.623"></status>
+</kw>
+<kw name="Delete Request" library="RequestsLibrary">
+<doc>Send a DELETE request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>Add_Student_details</arg>
+<arg>api/studentsDetails/${Student_UD}</arg>
+</arguments>
+<assign>
+<var>${Response}</var>
+</assign>
+<msg timestamp="20190225 18:30:09.236" level="INFO">Delete Request using : alias=Add_Student_details, uri=api/studentsDetails/49, data=None,                     headers=None, allow_redirects=True </msg>
+<msg timestamp="20190225 18:30:09.236" level="INFO">/usr/local/lib/python2.7/dist-packages/urllib3/connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20190225 18:30:09.236" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" endtime="20190225 18:30:09.236" starttime="20190225 18:30:08.624"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${Response.status_code}</arg>
+</arguments>
+<assign>
+<var>${Actual_Code}</var>
+</assign>
+<msg timestamp="20190225 18:30:09.239" level="INFO">${Actual_Code} = 200</msg>
+<status status="PASS" endtime="20190225 18:30:09.239" starttime="20190225 18:30:09.237"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Actual_Code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" endtime="20190225 18:30:09.239" starttime="20190225 18:30:09.239"></status>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<doc>Convert a string to a JSON object</doc>
+<arguments>
+<arg>${Response.content}</arg>
+</arguments>
+<assign>
+<var>${Json_Response}</var>
+</assign>
+<msg timestamp="20190225 18:30:09.240" level="INFO">To JSON using : content={"status":"true","msg":"Delete  data success"} </msg>
+<msg timestamp="20190225 18:30:09.240" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20190225 18:30:09.240" level="INFO">${Json_Response} = {u'status': u'true', u'msg': u'Delete  data success'}</msg>
+<status status="PASS" endtime="20190225 18:30:09.240" starttime="20190225 18:30:09.240"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${Json_Response}</arg>
+<arg>status</arg>
+</arguments>
+<assign>
+<var>@{Status_List}</var>
+</assign>
+<msg timestamp="20190225 18:30:09.298" level="INFO">@{Status_List} = [ true ]</msg>
+<status status="PASS" endtime="20190225 18:30:09.298" starttime="20190225 18:30:09.241"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${Status_List}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20190225 18:30:09.299" level="INFO">${status} = true</msg>
+<status status="PASS" endtime="20190225 18:30:09.299" starttime="20190225 18:30:09.299"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status}</arg>
+<arg>true</arg>
+</arguments>
+<status status="PASS" endtime="20190225 18:30:09.300" starttime="20190225 18:30:09.299"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Response.status_code}</arg>
+</arguments>
+<status status="PASS" endtime="20190225 18:30:09.300" starttime="20190225 18:30:09.300"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Response.content}</arg>
+</arguments>
+<status status="PASS" endtime="20190225 18:30:09.301" starttime="20190225 18:30:09.300"></status>
+</kw>
+<status status="PASS" endtime="20190225 18:30:09.301" critical="yes" starttime="20190225 18:30:08.623"></status>
+</test>
+<status status="PASS" endtime="20190225 18:30:09.302" starttime="20190225 18:30:07.664"></status>
+</suite>
+<status status="PASS" endtime="20190225 18:30:09.303" starttime="20190225 18:30:07.661"></status>
+</suite>
+<status status="PASS" endtime="20190225 18:30:09.304" starttime="20190225 18:30:07.646"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Robot REST API" pass="1">Robot REST API</stat>
+<stat fail="0" id="s1-s1" name="TC 001 Rest API" pass="1">Robot REST API.TC 001 Rest API</stat>
+<stat fail="0" id="s1-s1-s1" name="TC 001 Delete Request" pass="1">Robot REST API.TC 001 Rest API.TC 001 Delete Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

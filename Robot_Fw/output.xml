@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190225 15:45:48.976" generator="Robot 3.1.1 (Python 2.7.12 on linux2)">
+<suite source="/opt/Anbu/workspace/Robot_Framework/Robot_Fw" id="s1" name="Robot Fw">
+<suite source="/opt/Anbu/workspace/Robot_Framework/Robot_Fw/Python_Test1" id="s1-s1" name="Python Test1">
+<suite source="/opt/Anbu/workspace/Robot_Framework/Robot_Fw/Python_Test1/Robot_suite1.robot" id="s1-s1-s1" name="Robot suite1">
+<kw type="setup" name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>I am inside the Test Suite Setup</arg>
+</arguments>
+<msg timestamp="20190225 15:45:49.142" level="INFO">I am inside the Test Suite Setup</msg>
+<status status="PASS" endtime="20190225 15:45:49.142" starttime="20190225 15:45:49.141"></status>
+</kw>
+<test id="s1-s1-s1-t1" name="Bosco_BHR_Login">
+<kw type="setup" name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>I am inside the Test Setup</arg>
+</arguments>
+<msg timestamp="20190225 15:45:49.144" level="INFO">I am inside the Test Setup</msg>
+<status status="PASS" endtime="20190225 15:45:49.144" starttime="20190225 15:45:49.143"></status>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Firefox</arg>
+<arg>executable_path=/usr/local/lib/python2.7/dist-packages/geckodriver</arg>
+</arguments>
+<msg timestamp="20190225 15:45:49.144" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
+<status status="PASS" endtime="20190225 15:45:54.316" starttime="20190225 15:45:49.144"></status>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>Firefox</arg>
+</arguments>
+<msg timestamp="20190225 15:45:54.317" level="INFO">Opening browser 'Firefox' to base url 'http://192.168.1.8:8069/web/login'.</msg>
+<status status="PASS" endtime="20190225 15:46:05.529" starttime="20190225 15:45:54.316"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20190225 15:46:05.533" starttime="20190225 15:46:05.529"></status>
+</kw>
+<kw name="LoginKW">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=login</arg>
+<arg>@{CREDENTIALS}[0]</arg>
+</arguments>
+<msg timestamp="20190225 15:46:05.534" level="INFO">Typing text 'joenishanth' into text field 'id=login'.</msg>
+<status status="PASS" endtime="20190225 15:46:05.570" starttime="20190225 15:46:05.534"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>&amp;{LOGINDATA}[password]</arg>
+</arguments>
+<msg timestamp="20190225 15:46:05.570" level="INFO">Typing text 'boscou2A' into text field 'id=password'.</msg>
+<status status="PASS" endtime="20190225 15:46:05.600" starttime="20190225 15:46:05.570"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[@type='submit']</arg>
+</arguments>
+<msg timestamp="20190225 15:46:05.601" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<status status="PASS" endtime="20190225 15:46:07.782" starttime="20190225 15:46:05.601"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[@class='dropdown full']</arg>
+</arguments>
+<msg timestamp="20190225 15:46:07.784" level="INFO">Clicking element 'xpath=//a[@class='dropdown full']'.</msg>
+<status status="PASS" endtime="20190225 15:46:10.904" starttime="20190225 15:46:07.782"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//ul[@class='dropdown-menu']//li[11]//a[1]</arg>
+</arguments>
+<msg timestamp="20190225 15:46:10.905" level="INFO">Clicking element 'xpath=//ul[@class='dropdown-menu']//li[11]//a[1]'.</msg>
+<status status="PASS" endtime="20190225 15:46:12.171" starttime="20190225 15:46:10.904"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20190225 15:46:12.179" starttime="20190225 15:46:12.172"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//span[contains(text(),'U2A-Pre-Sale FEB-2019')]</arg>
+</arguments>
+<msg timestamp="20190225 15:46:12.179" level="INFO">Clicking element 'xpath=//span[contains(text(),'U2A-Pre-Sale FEB-2019')]'.</msg>
+<status status="PASS" endtime="20190225 15:46:15.423" starttime="20190225 15:46:12.179"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20190225 15:46:15.426" starttime="20190225 15:46:15.424"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//button[contains(text(),'Import')]</arg>
+</arguments>
+<msg timestamp="20190225 15:46:15.427" level="INFO">Clicking element 'xpath=//button[contains(text(),'Import')]'.</msg>
+<status status="PASS" endtime="20190225 15:46:15.756" starttime="20190225 15:46:15.427"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20190225 15:46:15.759" starttime="20190225 15:46:15.756"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//label[@class='btn btn-primary']</arg>
+</arguments>
+<msg timestamp="20190225 15:46:15.760" level="INFO">Clicking element 'xpath=//label[@class='btn btn-primary']'.</msg>
+<status status="PASS" endtime="20190225 15:46:20.789" starttime="20190225 15:46:15.759"></status>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20190225 15:46:20.792" starttime="20190225 15:46:20.789"></status>
+</kw>
+<status status="PASS" endtime="20190225 15:46:20.792" starttime="20190225 15:46:05.533"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20190225 15:46:25.793" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" endtime="20190225 15:46:25.793" starttime="20190225 15:46:20.793"></status>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<doc>Sets the directory for captured screenshots.</doc>
+<arguments>
+<arg>path=/opt/Anbu/workspace/Robot_Framework/Robot_Fw/ScreenShots/</arg>
+</arguments>
+<status status="PASS" endtime="20190225 15:46:25.794" starttime="20190225 15:46:25.794"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190225 15:46:26.161" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="ScreenShots/selenium-screenshot-6.png"&gt;&lt;img src="ScreenShots/selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20190225 15:46:26.161" starttime="20190225 15:46:25.794"></status>
+</kw>
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20190225 15:46:37.696" starttime="20190225 15:46:26.162"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>BoscoSoft BHR Account has been Logined</arg>
+</arguments>
+<msg timestamp="20190225 15:46:37.707" level="INFO">BoscoSoft BHR Account has been Logined</msg>
+<status status="PASS" endtime="20190225 15:46:37.707" starttime="20190225 15:46:37.697"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20190225 15:46:37.708" starttime="20190225 15:46:37.707"></status>
+</kw>
+<tags>
+<tag>Sanity</tag>
+</tags>
+<status status="PASS" endtime="20190225 15:46:37.708" critical="yes" starttime="20190225 15:45:49.143"></status>
+</test>
+<kw type="teardown" name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>I am inside the Test Suite Teardown</arg>
+</arguments>
+<msg timestamp="20190225 15:46:37.713" level="INFO">I am inside the Test Suite Teardown</msg>
+<status status="PASS" endtime="20190225 15:46:37.713" starttime="20190225 15:46:37.712"></status>
+</kw>
+<status status="PASS" endtime="20190225 15:46:37.713" starttime="20190225 15:45:49.021"></status>
+</suite>
+<status status="PASS" endtime="20190225 15:46:37.716" starttime="20190225 15:45:49.020"></status>
+</suite>
+<status status="PASS" endtime="20190225 15:46:37.717" starttime="20190225 15:45:49.004"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Sanity</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Robot Fw" pass="1">Robot Fw</stat>
+<stat fail="0" id="s1-s1" name="Python Test1" pass="1">Robot Fw.Python Test1</stat>
+<stat fail="0" id="s1-s1-s1" name="Robot suite1" pass="1">Robot Fw.Python Test1.Robot suite1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
